@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Derivatives: Meaning &amp; Formulas | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+<style>
+  :root{--sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;--sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;--sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;--shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){.test-layout{grid-template-columns:1fr}.test-sidebar{position:static}.nav-grid{grid-template-columns:repeat(10,1fr)}.result-hero{grid-template-columns:1fr}}
+  @media(max-width:640px){header{padding:14px 16px}.brand-title{font-size:16px}.header-credit{font-size:11.5px;padding:6px 12px;text-align:left}.nav-btn{padding:14px 12px;font-size:13px}main{padding:20px 12px 60px}.card{padding:20px 18px}.sat-hero{padding:24px 20px}.timer{font-size:20px;padding:6px 14px;min-width:90px}.hero{padding:26px 22px}.hero h1{font-size:22px}.page-title{font-size:22px}.footer-inner{grid-template-columns:1fr;gap:24px}footer{padding:28px 18px 20px}.nav-grid{grid-template-columns:repeat(6,1fr)}.wrong-item .ans-row{grid-template-columns:1fr}.result-score .num{font-size:34px}.test-topbar{position:static}.test-sidebar{position:static}.level-banner{flex-direction:column;gap:14px;padding:18px}.level-icon{width:52px;height:52px;font-size:28px}.level-content h3{font-size:18px}.roadmap{padding:20px 18px}.roadmap-phase{flex-direction:column;gap:12px}.time-analysis{padding:18px;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div><div class="brand-title">SAT Math — Derivatives</div><div class="brand-sub">Meaning of Derivative · Differentiation Formulas</div></div>
+    </div>
+    <div class="header-credit">Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>THPT Trần Phú • ☎ 0964 848 989</div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Đạo hàm &amp; Ý nghĩa — Nền tảng chinh phục SAT Math nâng cao</h1>
+    <p>Chuyên đề song ngữ Việt–Anh về <strong>đạo hàm, tốc độ thay đổi, tiếp tuyến và các công thức đạo hàm cơ bản</strong>. Digital SAT không hỏi giải tích thuần túy, nhưng <strong>tư duy đạo hàm</strong> giúp em xử lý nhanh các câu hỏi đồ thị, tốc độ thay đổi và bài toán thực tế ở mức 700+. Hệ thống gồm <strong>kiến thức trọng tâm, 30 từ vựng có phiên âm, 30 câu luyện tập tức thì và 3 bộ SAT Simulation × 30 câu</strong> có đồng hồ, âm thanh và lộ trình cá nhân hóa.</p>
+    <div class="hero-author"><div class="avatar">NT</div><div><strong>Thầy Nguyễn Hữu Trung</strong><span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span></div></div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')"><div class="icon">📐</div><h4>1. Kiến thức cơ bản</h4><p>Định nghĩa đạo hàm, ý nghĩa hình học &amp; vật lý, tốc độ thay đổi, quy tắc tính đạo hàm và ứng dụng SAT.</p></div>
+    <div class="home-card" onclick="switchTab('vocab')"><div class="icon">📚</div><h4>2. Từ vựng chuyên ngành</h4><p>30 từ khóa về đạo hàm, tốc độ thay đổi, tiếp tuyến, giới hạn… kèm phiên âm IPA và phát âm tự động.</p></div>
+    <div class="home-card" onclick="switchTab('practice')"><div class="icon">✏️</div><h4>3. Luyện tập 3 nhóm</h4><p>30 câu trắc nghiệm tiếng Anh từ cơ bản đến nâng cao, chấm điểm ngay và gợi ý ôn lại lý thuyết khi sai.</p></div>
+    <div class="home-card" onclick="switchTab('sat')"><div class="icon">⏱️</div><h4>4. SAT Simulation</h4><p>3 bộ đề × 30 câu theo phong cách Digital SAT, đồng hồ 45 phút/bộ, hiệu ứng âm thanh và phân tích kết quả chi tiết.</p></div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản — Đạo hàm &amp; Ý nghĩa</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Trọng tâm hiểu bản chất để vận dụng vào SAT Math</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Đạo hàm là gì? — What is a Derivative?</h3>
+    <table>
+      <tr><th>Tiếng Việt</th><th>English</th></tr>
+      <tr><td><strong>Đạo hàm</strong> của hàm số \(f(x)\) tại điểm \(x_0\), ký hiệu \(f'(x_0)\), là <strong>giới hạn của tỉ số</strong> \(\dfrac{f(x_0+h)-f(x_0)}{h}\) khi \(h \to 0\) (nếu giới hạn này tồn tại hữu hạn).</td><td>The <strong>derivative</strong> of \(f(x)\) at \(x_0\), denoted \(f'(x_0)\), is the <strong>limit</strong> \(\displaystyle\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}\) if it exists.</td></tr>
+      <tr><td>Đạo hàm đo <strong>tốc độ thay đổi tức thời</strong> của hàm số theo biến số.</td><td>The derivative measures the <strong>instantaneous rate of change</strong> of a function with respect to its variable.</td></tr>
+      <tr><td>Ký hiệu: \(f'(x)\), \(y'\), \(\dfrac{dy}{dx}\), \(\dfrac{df}{dx}\).</td><td>Notation: \(f'(x)\), \(y'\), \(\dfrac{dy}{dx}\), \(\dfrac{df}{dx}\).</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Định nghĩa (Definition):</strong> \[ f'(x_0)=\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} \]
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> Với \(f(x)=x^2\), \[ f'(x)=\lim_{h\to 0}\frac{(x+h)^2-x^2}{h}=\lim_{h\to 0}(2x+h)=2x. \]
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Ý nghĩa hình học — Geometric Meaning (Tangent Line)</h3>
+    <table>
+      <tr><th>Tiếng Việt</th><th>English</th></tr>
+      <tr><td>Đạo hàm \(f'(x_0)\) là <strong>hệ số góc (độ dốc) của tiếp tuyến</strong> với đồ thị \(y=f(x)\) tại điểm \(M(x_0;f(x_0))\).</td><td>\(f'(x_0)\) is the <strong>slope of the tangent line</strong> to the graph \(y=f(x)\) at \(M(x_0,f(x_0))\).</td></tr>
+      <tr><td>Phương trình tiếp tuyến: \(y=f(x_0)+f'(x_0)(x-x_0)\).</td><td>Tangent line equation: \(y=f(x_0)+f'(x_0)(x-x_0)\).</td></tr>
+      <tr><td>Nếu \(f'(x_0)>0\): hàm số <strong>đồng biến</strong> (increasing) tại \(x_0\). Nếu \(f'(x_0)<0\): <strong>nghịch biến</strong> (decreasing). Nếu \(f'(x_0)=0\): tiếp tuyến nằm ngang (horizontal tangent) — ứng viên cực trị.</td><td>If \(f'(x_0)>0\): function is <strong>increasing</strong>; if \(f'(x_0)<0\): <strong>decreasing</strong>; if \(f'(x_0)=0\): horizontal tangent — a candidate for a local extremum.</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Tiếp tuyến (Tangent line):</strong> \(y - f(x_0) = f'(x_0)(x - x_0)\)
+    </div>
+    <div class="formula-box">
+      <strong>Ví dụ (Example):</strong> \(f(x)=x^2\), \(f'(x)=2x\). Tại \(x_0=1\): \(f(1)=1\), \(f'(1)=2\). Tiếp tuyến: \(y-1=2(x-1)\) hay \(y=2x-1\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Ý nghĩa vật lý — Physical Meaning (Rate of Change)</h3>
+    <table>
+      <tr><th>Tiếng Việt</th><th>English</th></tr>
+      <tr><td>Nếu \(s(t)\) là vị trí (position) theo thời gian \(t\), thì \(v(t)=s'(t)\) là <strong>vận tốc tức thời</strong> (instantaneous velocity).</td><td>If \(s(t)\) is position, then \(v(t)=s'(t)\) is <strong>instantaneous velocity</strong>.</td></tr>
+      <tr><td>Nếu \(v(t)\) là vận tốc, thì \(a(t)=v'(t)=s''(t)\) là <strong>gia tốc</strong> (acceleration).</td><td>If \(v(t)\) is velocity, then \(a(t)=v'(t)=s''(t)\) is <strong>acceleration</strong>.</td></tr>
+      <tr><td><strong>Tốc độ thay đổi trung bình</strong> trên \([a,b]\) là \(\dfrac{f(b)-f(a)}{b-a}\) — độ dốc của dây cung (secant line). <strong>Tốc độ thay đổi tức thời</strong> tại \(x\) là \(f'(x)\) — độ dốc tiếp tuyến.</td><td><strong>Average rate of change</strong> on \([a,b]\) is \(\dfrac{f(b)-f(a)}{b-a}\) (secant slope). <strong>Instantaneous rate of change</strong> is \(f'(x)\) (tangent slope).</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Công thức (Formulas):</strong> \[ \text{Average rate of change} = \frac{f(b)-f(a)}{b-a} \qquad \text{Instantaneous rate} = f'(x) \]
+    </div>
+    <div class="formula-box">
+      <strong>Liên hệ SAT:</strong> SAT thường hỏi “average rate of change” hoặc cho đồ thị \(f'\) để so sánh \(f(a), f(b)\) dựa trên dấu của \(f'\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Công thức đạo hàm cơ bản — Basic Differentiation Rules</h3>
+    <table>
+      <tr><th>Hàm số (Function)</th><th>Đạo hàm (Derivative)</th><th>Ghi chú (Note)</th></tr>
+      <tr><td>\(c\) (hằng số)</td><td>\(0\)</td><td>Constant Rule</td></tr>
+      <tr><td>\(x^n\)</td><td>\(n x^{n-1}\)</td><td>Power Rule (n ≠ 0)</td></tr>
+      <tr><td>\(c\,f(x)\)</td><td>\(c\,f'(x)\)</td><td>Constant Multiple</td></tr>
+      <tr><td>\(f(x)\pm g(x)\)</td><td>\(f'(x)\pm g'(x)\)</td><td>Sum / Difference Rule</td></tr>
+      <tr><td>\(f(x)g(x)\)</td><td>\(f'(x)g(x)+f(x)g'(x)\)</td><td>Product Rule</td></tr>
+      <tr><td>\(\dfrac{f(x)}{g(x)}\)</td><td>\(\dfrac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}\)</td><td>Quotient Rule</td></tr>
+      <tr><td>\(f(g(x))\)</td><td>\(f'(g(x))\cdot g'(x)\)</td><td>Chain Rule</td></tr>
+      <tr><td>\(\sqrt{x}\)</td><td>\(\dfrac{1}{2\sqrt{x}}\)</td><td>Power Rule with \(n=\tfrac12\)</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Ví dụ (Examples):</strong><br>
+      • \(y=3x^4-2x+7 \Rightarrow y'=12x^3-2\).<br>
+      • \(y=(x^2+1)(x-3) \Rightarrow y'=2x(x-3)+(x^2+1)=3x^2-6x+1\).<br>
+      • \(y=\dfrac{2x+1}{x-1} \Rightarrow y'=\dfrac{2(x-1)-(2x+1)}{(x-1)^2}=\dfrac{-3}{(x-1)^2}\).<br>
+      • \(y=(3x+1)^5 \Rightarrow y'=5(3x+1)^4\cdot 3=15(3x+1)^4\).
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Ứng dụng trong SAT Math — Derivatives in the Digital SAT</h3>
+    <ul>
+      <li><strong>Đọc đồ thị \(f'\) để suy ra hành vi của \(f\):</strong> \(f'>0\) ⇒ \(f\) tăng; \(f'<0\) ⇒ \(f\) giảm. SAT có thể yêu cầu so sánh \(f(1), f(5), f(8)\) khi biết dấu của \(g'\) trên các khoảng.</li>
+      <li><strong>Tốc độ thay đổi trung bình:</strong> Bài toán cho bảng số liệu hoặc hàm số, yêu cầu tính \(\dfrac{f(b)-f(a)}{b-a}\) — đây là dạng SAT phổ biến.</li>
+      <li><strong>Ý nghĩa tiếp tuyến:</strong> Xác định hệ số góc của tiếp tuyến tại một điểm trên đồ thị (có thể dùng đạo hàm hoặc ước lượng từ đồ thị).</li>
+      <li><strong>Bài toán thực tế:</strong> Lợi nhuận, dân số, nhiệt độ — đạo hàm cho biết tốc độ thay đổi tức thời.</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Chiến lược SAT (SAT Strategy):</strong><br>
+      ① Xác định câu hỏi thuộc dạng “rate of change” hay “tangent slope” hay “graph behavior”.<br>
+      ② Nếu có hàm số: dùng công thức đạo hàm hoặc tính \(\dfrac{f(b)-f(a)}{b-a}\) cho tốc độ trung bình.<br>
+      ③ Nếu có đồ thị \(f'\): đọc dấu để kết luận \(f\) tăng/giảm — không cần tính đạo hàm.
+    </div>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Từ vựng SAT Math — Derivatives</h2>
+  <p class="page-subtitle">30 từ khóa cốt lõi kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm — Derivatives</h2>
+  <p class="page-subtitle">30 câu tiếng Anh · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation — Derivatives &amp; Rate of Change</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Phong cách Digital SAT Math · Đồng hồ 45 phút</p>
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Derivatives, Rate of Change &amp; Graph Interpretation</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong>. Sau khi nộp bài, em nhận <strong>bảng tổng kết điểm, đánh giá năng lực, lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong>.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+  <div id="satSetSelector" class="sat-set-selector"></div>
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnForceResult">📊 Xem kết quả ngay</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head"><div class="q-num" id="testQNum">1</div><div class="q-text" id="testQText"></div></div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về chuyên đề</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Derivatives — Meaning &amp; Formulas</strong> (Đạo hàm và ý nghĩa, công thức đạo hàm), thiết kế cho học sinh lớp 12 chuẩn bị Digital SAT. Nội dung song ngữ, bài tập sát cấu trúc SAT và hệ thống phân tích kết quả cá nhân hóa.</p>
+      <div class="footer-author-card"><div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div><div class="role">Giáo viên Toán — THPT Trần Phú</div><div class="phone">📞 0964 848 989</div></div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong></p>
+    <p style="margin-top:6px">Made with ❤️ for high school students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============ TAB SWITCHING ============ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector('.nav-btn[data-tab="'+tab+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{btn.addEventListener('click',()=>switchTab(btn.dataset.tab));});
+
+/* ============ SOUND ============ */
+let audioCtx=null;
+function getCtx(){if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended') audioCtx.resume();return audioCtx;}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============ VOCABULARY ============ */
+const vocab=[
+  ["derivative","/dɪˈrɪvətɪv/","đạo hàm","The derivative of x² is 2x."],
+  ["differentiation","/ˌdɪfəˌrenʃiˈeɪʃn/","phép lấy đạo hàm","Differentiation gives the rate of change."],
+  ["rate of change","/reɪt əv tʃeɪndʒ/","tốc độ thay đổi","The derivative is an instantaneous rate of change."],
+  ["average rate of change","/ˈævərɪdʒ reɪt əv tʃeɪndʒ/","tốc độ thay đổi trung bình","Average rate of change = (f(b)-f(a))/(b-a)."],
+  ["instantaneous rate of change","/ˌɪnstənˈteɪniəs reɪt əv tʃeɪndʒ/","tốc độ thay đổi tức thời","Instantaneous rate is the derivative."],
+  ["limit","/ˈlɪmɪt/","giới hạn","The derivative is defined as a limit."],
+  ["tangent line","/ˈtændʒənt laɪn/","tiếp tuyến","The tangent line touches the curve at one point."],
+  ["secant line","/ˈsiːkənt laɪn/","cát tuyến","Average rate of change is the slope of a secant line."],
+  ["slope","/sloʊp/","độ dốc / hệ số góc","The slope of the tangent equals f'(x)."],
+  ["instantaneous velocity","/ˌɪnstənˈteɪniəs vəˈlɑːsəti/","vận tốc tức thời","Velocity is the derivative of position."],
+  ["acceleration","/əkˌseləˈreɪʃn/","gia tốc","Acceleration is the derivative of velocity."],
+  ["increasing","/ɪnˈkriːsɪŋ/","đồng biến / tăng","f is increasing when f'(x) > 0."],
+  ["decreasing","/dɪˈkriːsɪŋ/","nghịch biến / giảm","f is decreasing when f'(x) < 0."],
+  ["horizontal tangent","/ˌhɔːrɪˈzɑːntl ˈtændʒənt/","tiếp tuyến nằm ngang","f'(x)=0 gives a horizontal tangent."],
+  ["power rule","/ˈpaʊər ruːl/","quy tắc lũy thừa","Power rule: (xⁿ)' = nxⁿ⁻¹."],
+  ["product rule","/ˈprɑːdʌkt ruːl/","quy tắc tích","Product rule: (fg)' = f'g + fg'."],
+  ["quotient rule","/ˈkwoʊʃnt ruːl/","quy tắc thương","Quotient rule: (f/g)' = (f'g - fg')/g²."],
+  ["chain rule","/tʃeɪn ruːl/","quy tắc chuỗi","Chain rule: [f(g(x))]' = f'(g(x))g'(x)."],
+  ["constant rule","/ˈkɑːnstənt ruːl/","quy tắc hằng số","The derivative of a constant is 0."],
+  ["function","/ˈfʌŋkʃn/","hàm số","f is a differentiable function."],
+  ["graph","/ɡræf/","đồ thị","Read the sign of f' from the graph."],
+  ["concave up","/kɑːnˈkeɪv ʌp/","lồi (bề lõm hướng lên)","f is concave up when f'' > 0."],
+  ["concave down","/kɑːnˈkeɪv daʊn/","lõm (bề lõm hướng xuống)","f is concave down when f'' < 0."],
+  ["maximum","/ˈmæksɪməm/","cực đại","A local maximum occurs where f' changes from + to −."],
+  ["minimum","/ˈmɪnɪməm/","cực tiểu","A local minimum occurs where f' changes from − to +."],
+  ["estimate","/ˈestɪmeɪt/","ước lượng","Use the tangent line to estimate f(2.1)."],
+  ["approximate","/əˈprɑːksɪmət/","xấp xỉ","The derivative gives a linear approximation."],
+  ["position","/pəˈzɪʃn/","vị trí","s(t) is the position function."],
+  ["velocity","/vəˈlɑːsəti/","vận tốc","v(t) = s'(t)."],
+  ["notation","/noʊˈteɪʃn/","ký hiệu","dy/dx is Leibniz notation for the derivative."]
+];
+
+function renderVocab(filter){
+  filter = filter || "";
+  const tbody=document.querySelector('#vocabTable tbody');
+  tbody.innerHTML='';
+  const f=filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && !(v[0].toLowerCase().indexOf(f)>=0||v[2].toLowerCase().indexOf(f)>=0)) return;
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+(i+1)+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td><td>'+v[2]+'</td><td>'+v[3]+'</td><td><button class="speak-btn" data-word="'+v[0]+'" title="Phát âm">🔊</button></td>';
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement){renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.getElementById('vocabSearch').addEventListener('input',function(e){renderVocab(e.target.value);});
+document.addEventListener('click',function(e){
+  if(e.target.classList.contains('speak-btn')){
+    const word=e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============ PRACTICE DATA 30 câu ============ */
+const practiceData={
+  1:[
+    {q:"What is the derivative of \(f(x)=x^3\)?",opts:["\(3x^2\)","\(x^2\)","\(3x\)","\(x^3/3\)"],ans:0,exp:"Power Rule: \((x^n)'=nx^{n-1}\Rightarrow (x^3)'=3x^2\).",review:"Ôn mục IV — Power Rule"},
+    {q:"If \(f(x)=5x+2\), then \(f'(x)=\)?",opts:["\(5\)","\(2\)","\(5x\)","\(0\)"],ans:0,exp:"Đạo hàm của \(5x\) là 5, hằng số 2 có đạo hàm 0.",review:"Ôn mục IV — Constant Multiple & Constant Rule"},
+    {q:"The derivative of a constant is:",opts:["\(1\)","\(0\)","The constant itself","Undefined"],ans:1,exp:"Constant Rule: \((c)'=0\).",review:"Ôn mục IV — Constant Rule"},
+    {q:"\(f(x)=x^2\). Find \(f'(3)\).",opts:["\(3\)","\(6\)","\(9\)","\(12\)"],ans:1,exp:"\(f'(x)=2x\Rightarrow f'(3)=6\).",review:"Ôn mục IV — Power Rule"},
+    {q:"What does \(f'(x_0)\) represent geometrically?",opts:["The y-intercept","The slope of the tangent line at \(x_0\)","The area under the curve","The maximum value"],ans:1,exp:"\(f'(x_0)\) là hệ số góc của tiếp tuyến tại \(x_0\).",review:"Ôn mục II — Ý nghĩa hình học"},
+    {q:"If \(s(t)\) is position, then \(s'(t)\) is:",opts:["Acceleration","Velocity","Distance","Time"],ans:1,exp:"Đạo hàm của vị trí theo thời gian là vận tốc tức thời.",review:"Ôn mục III — Ý nghĩa vật lý"},
+    {q:"Average rate of change of \(f(x)=x^2\) on \([1,3]\)?",opts:["\(2\)","\(4\)","\(6\)","\(8\)"],ans:1,exp:"\(\dfrac{f(3)-f(1)}{3-1}=\dfrac{9-1}{2}=4\).",review:"Ôn mục III — Average rate of change"},
+    {q:"\(f(x)=4x^3\). \(f'(x)=\)?",opts:["\(12x^2\)","\(4x^2\)","\(12x^3\)","\(3x^2\)"],ans:0,exp:"\((4x^3)'=4\cdot 3x^2=12x^2\).",review:"Ôn mục IV — Constant Multiple + Power Rule"},
+    {q:"If \(f'(x)>0\) on an interval, then \(f\) is:",opts:["Decreasing","Increasing","Constant","Undefined"],ans:1,exp:"\(f'>0\) ⇒ hàm số đồng biến (increasing).",review:"Ôn mục II — Dấu đạo hàm và tính đơn điệu"},
+    {q:"The derivative of \(\sqrt{x}\) is:",opts:["\(\dfrac{1}{2\sqrt{x}}\)","\(\dfrac{1}{\sqrt{x}}\)","\(2\sqrt{x}\)","\(\sqrt{x}\)"],ans:0,exp:"\(\sqrt{x}=x^{1/2}\Rightarrow (x^{1/2})'=\tfrac12 x^{-1/2}=\dfrac{1}{2\sqrt{x}}\).",review:"Ôn mục IV — Power Rule"}
+  ],
+  2:[
+    {q:"\(f(x)=(x^2+1)(x-3)\). \(f'(x)=\)?",opts:["\(3x^2-6x+1\)","\(2x(x-3)\)","\(x^2+1\)","\(3x^2-6x\)"],ans:0,exp:"Product Rule: \(2x(x-3)+(x^2+1)=3x^2-6x+1\).",review:"Ôn mục IV — Product Rule"},
+    {q:"\(f(x)=\dfrac{2x+1}{x-1}\). \(f'(x)=\)?",opts:["\(\dfrac{-3}{(x-1)^2}\)","\(\dfrac{3}{(x-1)^2}\)","\(\dfrac{1}{x-1}\)","\(\dfrac{2x}{(x-1)^2}\)"],ans:0,exp:"Quotient Rule: \(\dfrac{2(x-1)-(2x+1)}{(x-1)^2}=\dfrac{-3}{(x-1)^2}\).",review:"Ôn mục IV — Quotient Rule"},
+    {q:"\(f(x)=(3x+1)^5\). \(f'(x)=\)?",opts:["\(5(3x+1)^4\)","\(15(3x+1)^4\)","\(3(3x+1)^4\)","\(5(3x+1)^5\)"],ans:1,exp:"Chain Rule: \(5(3x+1)^4\cdot 3=15(3x+1)^4\).",review:"Ôn mục IV — Chain Rule"},
+    {q:"Tangent line to \(y=x^2\) at \(x=1\)?",opts:["\(y=2x-1\)","\(y=x\)","\(y=2x+1\)","\(y=x^2\)"],ans:0,exp:"\(f(1)=1\), \(f'(1)=2\). Tiếp tuyến: \(y-1=2(x-1)\Rightarrow y=2x-1\).",review:"Ôn mục II — Phương trình tiếp tuyến"},
+    {q:"\(f(x)=x^3-3x\). Where is \(f'(x)=0\)?",opts:["\(x=0\) only","\(x=\pm 1\)","\(x=\pm 3\)","\(x=3\) only"],ans:1,exp:"\(f'(x)=3x^2-3=3(x^2-1)=0\Rightarrow x=\pm 1\).",review:"Ôn mục II — Tiếp tuyến ngang"},
+    {q:"Average rate of change of \(f(x)=x^3\) on \([0,2]\)?",opts:["\(2\)","\(4\)","\(6\)","\(8\)"],ans:1,exp:"\(\dfrac{8-0}{2}=4\).",review:"Ôn mục III — Average rate of change"},
+    {q:"\(f(x)=\dfrac{1}{x}\). \(f'(x)=\)?",opts:["\(-\dfrac{1}{x^2}\)","\(\dfrac{1}{x^2}\)","\(-\dfrac{1}{x}\)","\(\ln x\)"],ans:0,exp:"\(f(x)=x^{-1}\Rightarrow f'(x)=-x^{-2}=-\dfrac{1}{x^2}\).",review:"Ôn mục IV — Power Rule với số mũ âm"},
+    {q:"If \(g'(x)>0\) on \((2,7)\) and \(g'(x)<0\) outside, which is true?",opts:["\(g(1)>g(5)\)","\(g(5)>g(8)\)","\(g(1)=g(8)\)","\(g(2)>g(7)\)"],ans:1,exp:"\(g\) tăng trên \((2,7)\) nên \(g(5)>g(2)\); \(g\) giảm ngoài khoảng nên \(g(5)>g(8)\).",review:"Ôn mục V — Đọc dấu \(g'\) để so sánh giá trị hàm"},
+    {q:"\(f(x)=x^4-2x^2\). \(f''(x)=\)?",opts:["\(12x^2-4\)","\(4x^3-4x\)","\(12x^2-2\)","\(4x^3-2x\)"],ans:0,exp:"\(f'(x)=4x^3-4x\Rightarrow f''(x)=12x^2-4\).",review:"Ôn mục III — Đạo hàm cấp hai & gia tốc"},
+    {q:"A function has a horizontal tangent at \(x=a\). Then:",opts:["\(f(a)=0\)","\(f'(a)=0\)","\(f''(a)=0\)","\(f\) is undefined"],ans:1,exp:"Tiếp tuyến nằm ngang ⇔ \(f'(a)=0\).",review:"Ôn mục II — Horizontal tangent"}
+  ],
+  3:[
+    {q:"\(f(x)=x^2 e^x\). \(f'(x)=\)?",opts:["\(2x e^x\)","\(x(x+2)e^x\)","\(x^2 e^x\)","\(2x e^x + x^2\)"],ans:1,exp:"Product Rule: \(2x e^x + x^2 e^x = x(x+2)e^x\).",review:"Ôn mục IV — Product Rule"},
+    {q:"\(y=\sin x\). \(y'=\)?",opts:["\(\cos x\)","\(-\cos x\)","\(\sin x\)","\(-\sin x\)"],ans:0,exp:"Đạo hàm của \(\sin x\) là \(\cos x\).",review:"Ôn mục IV — Đạo hàm hàm lượng giác"},
+    {q:"\(f(x)=\ln x\). \(f'(x)=\)?",opts:["\(\dfrac{1}{x}\)","\(x\)","\(e^x\)","\(\ln x\)"],ans:0,exp:"\((\ln x)'=\dfrac{1}{x}\) với \(x>0\).",review:"Ôn mục IV — Đạo hàm logarit"},
+    {q:"Tangent line to \(y=x^3\) at \(x=2\)?",opts:["\(y=12x-16\)","\(y=12x+16\)","\(y=3x^2-4\)","\(y=8x-12\)"],ans:0,exp:"\(f(2)=8\), \(f'(2)=12\). Tiếp tuyến: \(y-8=12(x-2)\Rightarrow y=12x-16\).",review:"Ôn mục II — Phương trình tiếp tuyến"},
+    {q:"If \(s(t)=t^3-6t^2+9t\), when is velocity zero?",opts:["\(t=1,3\)","\(t=0,3\)","\(t=2\) only","\(t=3\) only"],ans:0,exp:"\(v(t)=s'(t)=3t^2-12t+9=3(t-1)(t-3)=0\Rightarrow t=1,3\).",review:"Ôn mục III — Vận tốc tức thời"},
+    {q:"\(f(x)=\dfrac{x^2+1}{x}\). \(f'(x)=\)?",opts:["\(1-\dfrac{1}{x^2}\)","\(1+\dfrac{1}{x^2}\)","\(2x-\dfrac{1}{x^2}\)","\(2x+\dfrac{1}{x^2}\)"],ans:0,exp:"\(f(x)=x+\dfrac1x\Rightarrow f'(x)=1-\dfrac{1}{x^2}\). (Quotient Rule cũng cho kết quả này.)",review:"Ôn mục IV — Quotient Rule / Power Rule"},
+    {q:"\(f(x)=e^{2x}\). \(f'(x)=\)?",opts:["\(e^{2x}\)","\(2e^{2x}\)","\(e^{2x}/2\)","\(2xe^{2x}\)"],ans:1,exp:"Chain Rule: \(e^{2x}\cdot 2=2e^{2x}\).",review:"Ôn mục IV — Chain Rule với hàm mũ"},
+    {q:"\(f(x)=\sqrt{x^2+1}\). \(f'(x)=\)?",opts:["\(\dfrac{x}{\sqrt{x^2+1}}\)","\(\dfrac{1}{2\sqrt{x^2+1}}\)","\(\dfrac{2x}{\sqrt{x^2+1}}\)","\(\sqrt{x^2+1}\)"],ans:0,exp:"Chain Rule: \(\dfrac{1}{2\sqrt{x^2+1}}\cdot 2x=\dfrac{x}{\sqrt{x^2+1}}\).",review:"Ôn mục IV — Chain Rule"},
+    {q:"\(f(x)=x\ln x\). \(f'(x)=\)?",opts:["\(\ln x\)","\(\ln x+1\)","\(1/x\)","\(x/\ln x\)"],ans:1,exp:"Product Rule: \(1\cdot\ln x+x\cdot\dfrac1x=\ln x+1\).",review:"Ôn mục IV — Product Rule + logarit"},
+    {q:"The graph of \(f'\) is positive on \((0,2)\), negative on \((2,5)\), and zero at \(x=2\). Then \(f\) has:",opts:["Local minimum at \(x=2\)","Local maximum at \(x=2\)","No extremum at \(x=2\)","Undefined at \(x=2\)"],ans:1,exp:"\(f'\) đổi dấu từ + sang − tại \(x=2\) ⇒ \(f\) đạt cực đại tại \(x=2\).",review:"Ôn mục V — Đọc dấu \(f'\) để xác định cực trị"}
+  ]
+};
+
+const letterMap=['A','B','C','D'];
+
+function renderPractice(group){
+  const container=document.getElementById('panel-'+group);
+  container.innerHTML='';
+  practiceData[group].forEach(function(item,idx){
+    const card=document.createElement('div');
+    card.className='q-card';card.id='g'+group+'q'+idx;
+    let optsHtml='';
+    item.opts.forEach(function(o,i){
+      optsHtml+='<button class="option" data-group="'+group+'" data-q="'+idx+'" data-opt="'+i+'"><span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span></button>';
+    });
+    card.innerHTML='<div class="q-head"><div class="q-num">'+(idx+1)+'</div><div class="q-text">'+item.q+'</div></div><div class="options">'+optsHtml+'</div><div class="feedback" id="fb-'+group+'-'+idx+'"></div>';
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+}
+document.querySelectorAll('.group-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.group-tab').forEach(function(t){t.classList.remove('active');});
+    document.querySelectorAll('.group-panel').forEach(function(p){p.classList.remove('active');});
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',function(e){
+  const btn=e.target.closest('.option');
+  if(!btn||btn.classList.contains('disabled')) return;
+  const group=btn.dataset.group;if(!group) return;
+  const qIdx=+btn.dataset.q, optIdx=+btn.dataset.opt;
+  const card=document.getElementById('g'+group+'q'+qIdx);
+  const item=practiceData[group][qIdx];
+  const fb=document.getElementById('fb-'+group+'-'+qIdx);
+  const allOpts=card.querySelectorAll('.option');
+  allOpts.forEach(function(o){o.classList.add('disabled');});
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect=optIdx===item.ans;
+  if(!isCorrect){btn.classList.add('wrong');}
+  card.classList.add(isCorrect?'correct':'wrong');
+  fb.className='feedback show '+(isCorrect?'ok':'no');
+  if(isCorrect){
+    fb.innerHTML='<strong>✅ Correct!</strong>'+item.exp+'<div class="review">💡 '+item.review+'</div>';
+    playDing();
+  } else {
+    fb.innerHTML='<strong>❌ Incorrect. Correct answer: '+letterMap[item.ans]+'</strong>'+item.exp+'<div class="review">📖 Ôn tập lại: '+item.review+'</div>';
+    playBuzz();
+  }
+  if(window.renderMathInElement){renderMathInElement(fb,{delimiters:[{left:'\\(',right:'\\)',display:false}]});}
+});
+
+/* ============ SAT TOPICS & RECOMMENDATIONS ============ */
+const TOPICS = {
+  DEFINITION:"Định nghĩa & Ý nghĩa đạo hàm",
+  TANGENT:"Tiếp tuyến & Hệ số góc",
+  RATE:"Tốc độ thay đổi (trung bình / tức thời)",
+  RULES:"Công thức đạo hàm cơ bản",
+  GRAPH:"Đọc đồ thị & Hành vi hàm số",
+  APPLICATION:"Ứng dụng thực tế"
+};
+const TOPIC_RECOMMENDATIONS = {
+  DEFINITION:"Ôn mục I: đạo hàm là giới hạn của tỉ số \\(\\frac{f(x+h)-f(x)}{h}\\); nắm ký hiệu \\(f'(x), dy/dx\\).",
+  TANGENT:"Ôn mục II: \\(f'(x_0)\\) là hệ số góc tiếp tuyến; phương trình \\(y-f(x_0)=f'(x_0)(x-x_0)\\).",
+  RATE:"Ôn mục III: tốc độ trung bình \\(\\frac{f(b)-f(a)}{b-a}\\); tốc độ tức thời \\(f'(x)\\); vận tốc \\(s'(t)\\), gia tốc \\(s''(t)\\).",
+  RULES:"Ôn mục IV: Power, Product, Quotient, Chain Rule; đạo hàm \\(\\sqrt{x}, 1/x, e^x, \\ln x, \\sin x\\).",
+  GRAPH:"Ôn mục V: \\(f'>0\\) ⇒ tăng; \\(f'<0\\) ⇒ giảm; \\(f'=0\\) ⇒ tiếp tuyến ngang; đọc dấu \\(f'\\) để so sánh giá trị hàm.",
+  APPLICATION:"Ôn mục III & V: vận tốc, gia tốc, lợi nhuận biên, tốc độ thay đổi trong bài toán thực tế."
+};
+
+/* ============ SAT SETS — 3 × 30 = 90 câu ============ */
+const SAT_SETS = {
+  1:{name:"Set 1 — Foundations",desc:"Định nghĩa đạo hàm, tốc độ thay đổi trung bình, tiếp tuyến cơ bản, Power Rule và các quy tắc đơn giản.",questions:[
+    {q:"What is the derivative of \(f(x)=x^4\)?",opts:["\(4x^3\)","\(x^3\)","\(4x\)","\(x^4/4\)"],ans:0,topic:"RULES",exp:"Power Rule: \((x^n)'=nx^{n-1}\Rightarrow 4x^3\).",review:"Ôn mục IV"},
+    {q:"If \(f(x)=3x^2-2x+1\), then \(f'(x)=\)?",opts:["\(6x-2\)","\(3x-2\)","\(6x^2-2x\)","\(6x+1\)"],ans:0,topic:"RULES",exp:"\((3x^2)'=6x\), \((-2x)'=-2\), \((1)'=0\).",review:"Ôn mục IV"},
+    {q:"Average rate of change of \(f(x)=x^2\) on \([0,4]\)?",opts:["\(2\)","\(4\)","\(8\)","\(16\)"],ans:1,topic:"RATE",exp:"\(\dfrac{f(4)-f(0)}{4-0}=\dfrac{16-0}{4}=4\).",review:"Ôn mục III"},
+    {q:"\(f'(x_0)\) is the slope of the:",opts:["Secant line","Tangent line","Normal line","x-axis"],ans:1,topic:"TANGENT",exp:"\(f'(x_0)\) là hệ số góc của tiếp tuyến tại \(x_0\).",review:"Ôn mục II"},
+    {q:"If \(f'(x)<0\) on an interval, \(f\) is:",opts:["Increasing","Decreasing","Constant","Undefined"],ans:1,topic:"GRAPH",exp:"\(f'<0\) ⇒ hàm số nghịch biến (decreasing).",review:"Ôn mục V"},
+    {q:"Derivative of \(f(x)=7\) is:",opts:["\(7\)","\(0\)","\(7x\)","Undefined"],ans:1,topic:"RULES",exp:"Constant Rule: \((c)'=0\).",review:"Ôn mục IV"},
+    {q:"If \(s(t)\) is position, \(s'(t)\) represents:",opts:["Acceleration","Velocity","Distance","Time"],ans:1,topic:"RATE",exp:"Đạo hàm của vị trí là vận tốc tức thời.",review:"Ôn mục III"},
+    {q:"\(f(x)=\sqrt{x}\). \(f'(x)=\)?",opts:["\(\dfrac{1}{2\sqrt{x}}\)","\(\dfrac{1}{\sqrt{x}}\)","\(2\sqrt{x}\)","\(\sqrt{x}\)"],ans:0,topic:"RULES",exp:"\((x^{1/2})'=\tfrac12 x^{-1/2}=\dfrac{1}{2\sqrt{x}}\).",review:"Ôn mục IV"},
+    {q:"Tangent line to \(y=x^2\) at \(x=2\)?",opts:["\(y=4x-4\)","\(y=4x+4\)","\(y=2x-4\)","\(y=x-2\)"],ans:0,topic:"TANGENT",exp:"\(f(2)=4\), \(f'(2)=4\). Tiếp tuyến: \(y-4=4(x-2)\Rightarrow y=4x-4\).",review:"Ôn mục II"},
+    {q:"\(f(x)=x^3-6x\). \(f'(x)=\)?",opts:["\(3x^2-6\)","\(3x^2-6x\)","\(x^2-6\)","\(3x-6\)"],ans:0,topic:"RULES",exp:"\((x^3)'=3x^2\), \((-6x)'=-6\).",review:"Ôn mục IV"},
+    {q:"If \(f'(a)=0\), the tangent line at \(x=a\) is:",opts:["Vertical","Horizontal","Undefined","Slanted with slope 1"],ans:1,topic:"TANGENT",exp:"\(f'(a)=0\) ⇒ tiếp tuyến nằm ngang (horizontal).",review:"Ôn mục II"},
+    {q:"Average rate of change of \(f(x)=3x+1\) on \([1,5]\)?",opts:["\(3\)","\(1\)","\(15\)","\(4\)"],ans:0,topic:"RATE",exp:"Hàm bậc nhất có tốc độ thay đổi trung bình bằng hệ số góc: 3.",review:"Ôn mục III"},
+    {q:"\(f(x)=5x^3\). \(f'(x)=\)?",opts:["\(15x^2\)","\(5x^2\)","\(15x^3\)","\(3x^2\)"],ans:0,topic:"RULES",exp:"\((5x^3)'=5\cdot 3x^2=15x^2\).",review:"Ôn mục IV"},
+    {q:"If \(g'(x)>0\) on \((1,4)\), which is true?",opts:["\(g(1)>g(4)\)","\(g(4)>g(1)\)","\(g(1)=g(4)\)","Cannot determine"],ans:1,topic:"GRAPH",exp:"\(g\) tăng trên \((1,4)\) nên \(g(4)>g(1)\).",review:"Ôn mục V"},
+    {q:"Derivative of \(f(x)=x\) is:",opts:["\(0\)","\(1\)","\(x\)","Undefined"],ans:1,topic:"RULES",exp:"\((x)'=1\).",review:"Ôn mục IV"},
+    {q:"Velocity is the derivative of:",opts:["Acceleration","Position","Time","Distance"],ans:1,topic:"RATE",exp:"\(v(t)=s'(t)\) với \(s(t)\) là vị trí.",review:"Ôn mục III"},
+    {q:"\(f(x)=x^2+3x\). \(f'(1)=\)?",opts:["\(3\)","\(5\)","\(2\)","\(4\)"],ans:1,topic:"RULES",exp:"\(f'(x)=2x+3\Rightarrow f'(1)=5\).",review:"Ôn mục IV"},
+    {q:"A horizontal tangent occurs when:",opts:["\(f(x)=0\)","\(f'(x)=0\)","\(f''(x)=0\)","\(f'(x)>0\)"],ans:1,topic:"TANGENT",exp:"Tiếp tuyến ngang ⇔ \(f'=0\).",review:"Ôn mục II"},
+    {q:"\(f(x)=2x^2-4x+7\). \(f'(x)=\)?",opts:["\(4x-4\)","\(2x-4\)","\(4x^2-4x\)","\(4x+7\)"],ans:0,topic:"RULES",exp:"\((2x^2)'=4x\), \((-4x)'=-4\).",review:"Ôn mục IV"},
+    {q:"If \(f'\) is positive then negative at \(x=a\), then \(f\) has a:",opts:["Local minimum","Local maximum","Point of inflection","Vertical tangent"],ans:1,topic:"GRAPH",exp:"\(f'\) đổi từ + sang − ⇒ cực đại tại \(a\).",review:"Ôn mục V"},
+    {q:"\(f(x)=-4x+9\). \(f'(x)=\)?",opts:["\(-4\)","\(4\)","\(-4x\)","\(9\)"],ans:0,topic:"RULES",exp:"Đạo hàm của \(-4x\) là \(-4\); hằng số 9 có đạo hàm 0.",review:"Ôn mục IV"},
+    {q:"\(f(x)=x^5\). \(f'(x)=\)?",opts:["\(5x^4\)","\(x^4\)","\(5x\)","\(x^6/6\)"],ans:0,topic:"RULES",exp:"Power Rule: \((x^5)'=5x^4\).",review:"Ôn mục IV"},
+    {q:"Average rate of change of \(f(x)=2x+3\) on \([0,5]\)?",opts:["\(2\)","\(3\)","\(10\)","\(13\)"],ans:0,topic:"RATE",exp:"Hàm bậc nhất có tốc độ trung bình = hệ số góc = 2.",review:"Ôn mục III"},
+    {q:"If \(f'(x_0)=0\), the tangent line at \(x_0\) is:",opts:["Vertical","Horizontal","Undefined","Slanted"],ans:1,topic:"TANGENT",exp:"\(f'(x_0)=0\) ⇒ tiếp tuyến nằm ngang.",review:"Ôn mục II"},
+    {q:"If \(f\) is decreasing on an interval, then on that interval:",opts:["\(f'>0\)","\(f'<0\)","\(f'=0\)","\(f'\) undefined"],ans:1,topic:"GRAPH",exp:"Hàm giảm ⇒ \(f'<0\).",review:"Ôn mục V"},
+    {q:"\(f(x)=x^{1/3}\). \(f'(x)=\)?",opts:["\(\frac{1}{3}x^{-2/3}\)","\(3x^{2/3}\)","\(\frac{1}{3}x^{2/3}\)","\(x^{-2/3}\)"],ans:0,topic:"RULES",exp:"Power Rule: \((x^{1/3})'=\frac13 x^{-2/3}\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=3x^2+2x-1\). \(f'(x)=\)?",opts:["\(6x+2\)","\(6x-1\)","\(3x+2\)","\(6x^2+2\)"],ans:0,topic:"RULES",exp:"\((3x^2)'=6x\), \((2x)'=2\), \((-1)'=0\).",review:"Ôn mục IV"},
+    {q:"Tangent line to \(y=2x^2\) at \(x=1\)?",opts:["\(y=4x-2\)","\(y=4x+2\)","\(y=2x-2\)","\(y=x-2\)"],ans:0,topic:"TANGENT",exp:"\(f(1)=2\), \(f'(1)=4\). Tiếp tuyến: \(y-2=4(x-1)\Rightarrow y=4x-2\).",review:"Ôn mục II"},
+    {q:"Notation \(\dfrac{dy}{dx}\) means:",opts:["y divided by x","y minus x","Derivative of y with respect to x","Integral of y"],ans:2,topic:"DEFINITION",exp:"\(\dfrac{dy}{dx}\) là ký hiệu Leibniz của đạo hàm y theo x.",review:"Ôn mục I"},
+    {q:"Instantaneous rate of change of \(f(x)=x^2\) at \(x=-2\)?",opts:["\(-4\)","\(4\)","\(2\)","\(-2\)"],ans:0,topic:"RATE",exp:"\(f'(x)=2x\Rightarrow f'(-2)=-4\).",review:"Ôn mục III"}
+  ]},
+  2:{name:"Set 2 — Intermediate",desc:"Product/Quotient/Chain Rule, phương trình tiếp tuyến, tốc độ thay đổi tức thời và bài toán vận tốc–gia tốc.",questions:[
+    {q:"\(f(x)=(x^2+1)(x-2)\). \(f'(x)=\)?",opts:["\(3x^2-4x+1\)","\(2x(x-2)\)","\(3x^2-4x\)","\(x^2+1\)"],ans:0,topic:"RULES",exp:"Product Rule: \(2x(x-2)+(x^2+1)=3x^2-4x+1\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=\dfrac{3x-1}{x+2}\). \(f'(x)=\)?",opts:["\(\dfrac{7}{(x+2)^2}\)","\(\dfrac{-7}{(x+2)^2}\)","\(\dfrac{3}{(x+2)^2}\)","\(\dfrac{1}{x+2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{3(x+2)-(3x-1)}{(x+2)^2}=\dfrac{7}{(x+2)^2}\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=(2x-1)^4\). \(f'(x)=\)?",opts:["\(8(2x-1)^3\)","\(4(2x-1)^3\)","\(2(2x-1)^4\)","\(8(2x-1)^4\)"],ans:0,topic:"RULES",exp:"Chain Rule: \(4(2x-1)^3\cdot 2=8(2x-1)^3\).",review:"Ôn mục IV"},
+    {q:"Tangent line to \(y=x^3\) at \(x=1\)?",opts:["\(y=3x-2\)","\(y=3x+2\)","\(y=x-1\)","\(y=3x^2-2\)"],ans:0,topic:"TANGENT",exp:"\(f(1)=1\), \(f'(1)=3\). Tiếp tuyến: \(y-1=3(x-1)\Rightarrow y=3x-2\).",review:"Ôn mục II"},
+    {q:"\(f(x)=x^2\). Instantaneous rate at \(x=3\)?",opts:["\(3\)","\(6\)","\(9\)","\(12\)"],ans:1,topic:"RATE",exp:"\(f'(x)=2x\Rightarrow f'(3)=6\).",review:"Ôn mục III"},
+    {q:"\(s(t)=t^2-4t\). Velocity at \(t=3\)?",opts:["\(2\)","\(-2\)","\(6\)","\(0\)"],ans:0,topic:"RATE",exp:"\(v(t)=s'(t)=2t-4\Rightarrow v(3)=2\).",review:"Ôn mục III"},
+    {q:"\(f(x)=\dfrac{1}{x^2}\). \(f'(x)=\)?",opts:["\(-\dfrac{2}{x^3}\)","\(\dfrac{2}{x^3}\)","\(-\dfrac{1}{x^3}\)","\(\dfrac{1}{x^3}\)"],ans:0,topic:"RULES",exp:"\(x^{-2}\Rightarrow -2x^{-3}=-\dfrac{2}{x^3}\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=x^3-3x\). Where is \(f'(x)=0\)?",opts:["\(x=0\) only","\(x=\pm 1\)","\(x=\pm 3\)","Nowhere"],ans:1,topic:"TANGENT",exp:"\(f'(x)=3x^2-3=0\Rightarrow x^2=1\Rightarrow x=\pm 1\).",review:"Ôn mục II"},
+    {q:"\(f(x)=e^{3x}\). \(f'(x)=\)?",opts:["\(e^{3x}\)","\(3e^{3x}\)","\(3xe^{3x}\)","\(e^{3x}/3\)"],ans:1,topic:"RULES",exp:"Chain Rule: \(e^{3x}\cdot 3=3e^{3x}\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=\ln(2x)\). \(f'(x)=\)?",opts:["\(\dfrac{1}{x}\)","\(\dfrac{1}{2x}\)","\(\dfrac{2}{x}\)","\(\ln 2\)"],ans:0,topic:"RULES",exp:"\(\ln(2x)=\ln2+\ln x\Rightarrow f'(x)=\dfrac{1}{x}\).",review:"Ôn mục IV"},
+    {q:"A function has \(f'(x)>0\) on \((0,3)\) and \(f'(x)<0\) on \((3,6)\). At \(x=3\):",opts:["Local minimum","Local maximum","No extremum","Undefined"],ans:1,topic:"GRAPH",exp:"\(f'\) đổi + sang − ⇒ cực đại tại \(x=3\).",review:"Ôn mục V"},
+    {q:"Average rate of change of \(f(x)=x^3\) on \([1,3]\)?",opts:["\(13\)","\(12\)","\(9\)","\(26\)"],ans:0,topic:"RATE",exp:"\(\dfrac{27-1}{2}=13\).",review:"Ôn mục III"},
+    {q:"\(f(x)=\sqrt{3x+1}\). \(f'(x)=\)?",opts:["\(\dfrac{3}{2\sqrt{3x+1}}\)","\(\dfrac{1}{2\sqrt{3x+1}}\)","\(\dfrac{3}{\sqrt{3x+1}}\)","\(\dfrac{1}{\sqrt{3x+1}}\)"],ans:0,topic:"RULES",exp:"Chain Rule: \(\dfrac{1}{2\sqrt{3x+1}}\cdot 3=\dfrac{3}{2\sqrt{3x+1}}\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=x\sin x\). \(f'(x)=\)?",opts:["\(\sin x+x\cos x\)","\(\sin x-x\cos x\)","\(\cos x\)","\(x\cos x\)"],ans:0,topic:"RULES",exp:"Product Rule: \(1\cdot\sin x+x\cdot\cos x\).",review:"Ôn mục IV"},
+    {q:"\(s(t)=t^3-6t^2+9t\). Acceleration at \(t=2\)?",opts:["\(0\)","\(-6\)","\(6\)","\(12\)"],ans:0,topic:"RATE",exp:"\(v(t)=3t^2-12t+9\), \(a(t)=6t-12\Rightarrow a(2)=0\).",review:"Ôn mục III"},
+    {q:"Tangent line to \(y=\sqrt{x}\) at \(x=4\)?",opts:["\(y=\dfrac{x}{4}+1\)","\(y=\dfrac{x}{4}-1\)","\(y=2x-4\)","\(y=\dfrac{1}{2}x+1\)"],ans:0,topic:"TANGENT",exp:"\(f(4)=2\), \(f'(4)=\dfrac{1}{4}\). Tiếp tuyến: \(y-2=\dfrac14(x-4)\Rightarrow y=\dfrac{x}{4}+1\).",review:"Ôn mục II"},
+    {q:"If \(f'(x)\) is negative and increasing (becoming less negative), then \(f\) is:",opts:["Decreasing, concave up","Decreasing, concave down","Increasing, concave up","Increasing, concave down"],ans:0,topic:"GRAPH",exp:"\(f'<0\) ⇒ giảm; \(f'\) tăng lên ⇒ \(f''>0\) ⇒ lồi lên (concave up).",review:"Ôn mục V"},
+    {q:"\(f(x)=\dfrac{x}{x^2+1}\). \(f'(x)=\)?",opts:["\(\dfrac{1-x^2}{(x^2+1)^2}\)","\(\dfrac{1+x^2}{(x^2+1)^2}\)","\(\dfrac{-1}{(x^2+1)^2}\)","\(\dfrac{x^2-1}{(x^2+1)^2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{1(x^2+1)-x(2x)}{(x^2+1)^2}=\dfrac{1-x^2}{(x^2+1)^2}\).",review:"Ôn mục IV"},
+    {q:"The derivative of \(f(x)=\cos x\) is:",opts:["\(\sin x\)","\(-\sin x\)","\(\cos x\)","\(-\cos x\)"],ans:1,topic:"RULES",exp:"\((\cos x)'=-\sin x\).",review:"Ôn mục IV"},
+    {q:"Instantaneous rate of change of \(f(x)=x^2+1\) at \(x=1\)?",opts:["\(2\)","\(3\)","\(1\)","\(4\)"],ans:0,topic:"RATE",exp:"\(f'(x)=2x\Rightarrow f'(1)=2\).",review:"Ôn mục III"},
+    {q:"\(f(x)=(x^2+2)^3\). \(f'(x)=\)?",opts:["\(6x(x^2+2)^2\)","\(3(x^2+2)^2\)","\(6x(x^2+2)^3\)","\(2x(x^2+2)^3\)"],ans:0,topic:"RULES",exp:"Chain Rule: \(3(x^2+2)^2\cdot 2x=6x(x^2+2)^2\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=\cos(2x)\). \(f'(x)=\)?",opts:["\(-2\sin(2x)\)","\(\sin(2x)\)","\(2\sin(2x)\)","\(-\sin(2x)\)"],ans:0,topic:"RULES",exp:"Chain Rule: \(-\sin(2x)\cdot 2=-2\sin(2x)\).",review:"Ôn mục IV"},
+    {q:"\(f(x)=e^x\ln x\). \(f'(x)=\)?",opts:["\(e^x\ln x+\dfrac{e^x}{x}\)","\(e^x\ln x-\dfrac{e^x}{x}\)","\(\dfrac{e^x}{x}\)","\(e^x\cdot\dfrac{1}{x}\)"],ans:0,topic:"RULES",exp:"Product Rule: \(e^x\ln x+e^x\cdot\dfrac{1}{x}\).",review:"Ôn mục IV"},
+    {q:"\(s(t)=2t^3-3t^2\). Velocity at \(t=1\)?",opts:["\(0\)","\(3\)","\(6\)","\(-3\)"],ans:0,topic:"RATE",exp:"\(v(t)=6t^2-6t\Rightarrow v(1)=6-6=0\).",review:"Ôn mục III"},
+    {q:"\(\dfrac{d}{dx}\left[\dfrac{x+1}{x-1}\right]=\)?",opts:["\(\dfrac{-2}{(x-1)^2}\)","\(\dfrac{2}{(x-1)^2}\)","\(\dfrac{1}{x-1}\)","\(\dfrac{-1}{(x-1)^2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{1(x-1)-(x+1)(1)}{(x-1)^2}=\dfrac{-2}{(x-1)^2}\).",review:"Ôn mục IV"},
+    {q:"Tangent to \(y=x^3\) at \(x=-1\)?",opts:["\(y=3x+2\)","\(y=3x-2\)","\(y=-3x+2\)","\(y=x+2\)"],ans:0,topic:"TANGENT",exp:"\(f(-1)=-1\), \(f'(-1)=3\). Tiếp tuyến: \(y+1=3(x+1)\Rightarrow y=3x+2\).",review:"Ôn mục II"},
+    {q:"Average rate of change of \(f(x)=x^2-2x\) on \([1,4]\)?",opts:["\(3\)","\(2\)","\(5\)","\(1\)"],ans:0,topic:"RATE",exp:"\(f(4)=8\), \(f(1)=-1\), \(\dfrac{8-(-1)}{4-1}=\dfrac{9}{3}=3\).",review:"Ôn mục III"},
+    {q:"\(f(x)=\ln(x^2)\). \(f'(x)=\)?",opts:["\(\dfrac{2}{x}\)","\(\dfrac{1}{x^2}\)","\(\dfrac{2x}{x^2}\)","\(\dfrac{1}{2x}\)"],ans:0,topic:"RULES",exp:"\(\ln(x^2)=2\ln x\Rightarrow f'(x)=\dfrac{2}{x}\). (Hoặc chain rule: \(\frac{1}{x^2}\cdot 2x=\frac{2}{x}\).)",review:"Ôn mục IV"},
+    {q:"If \(f'(x)>0\) and \(f''(x)>0\), function is:",opts:["Increasing, concave up","Increasing, concave down","Decreasing, concave up","Decreasing, concave down"],ans:0,topic:"GRAPH",exp:"\(f'>0\) ⇒ tăng; \(f''>0\) ⇒ lồi (concave up).",review:"Ôn mục V"},
+    {q:"\(\dfrac{d}{dx}[3\sqrt{x}]=\)?",opts:["\(\dfrac{3}{2\sqrt{x}}\)","\(\dfrac{1}{2\sqrt{x}}\)","\(\dfrac{3}{\sqrt{x}}\)","\(3\sqrt{x}\)"],ans:0,topic:"RULES",exp:"\(3\cdot\dfrac{1}{2\sqrt{x}}=\dfrac{3}{2\sqrt{x}}\).",review:"Ôn mục IV"}
+  ]},
+  3:{name:"Set 3 — Advanced",desc:"Bài toán SAT-style phức hợp: đọc đồ thị f', so sánh giá trị hàm, tối ưu hóa, tốc độ thay đổi trong ngữ cảnh thực tế.",questions:[
+    {q:"The graph of \(f'\) is positive on \((0,2)\), negative on \((2,5)\), zero at \(x=2\). Which is true?",opts:["\(f(2)\) is a local minimum","\(f(2)\) is a local maximum","\(f(0)>f(2)\)","\(f(5)>f(2)\)"],ans:1,topic:"GRAPH",exp:"\(f'\) đổi + → − ⇒ \(f\) đạt cực đại tại \(x=2\).",review:"Ôn mục V"},
+    {q:"\(f'(x)>0\) on \((2,7)\), \(f'(x)<0\) outside. Which ordering is correct?",opts:["\(f(1)>f(5)>f(8)\)","\(f(5)>f(1)\) and \(f(5)>f(8)\)","\(f(8)>f(5)>f(1)\)","\(f(1)=f(8)\)"],ans:1,topic:"GRAPH",exp:"\(f\) tăng trên \((2,7)\) nên \(f(5)\) lớn hơn cả \(f(1)\) và \(f(8)\) (vì ngoài khoảng hàm giảm).",review:"Ôn mục V"},
+    {q:"\(f(x)=x^3-3x^2+4\). Where does \(f\) have a local maximum?",opts:["\(x=0\)","\(x=2\)","\(x=1\)","\(x=3\)"],ans:0,topic:"GRAPH",exp:"\(f'(x)=3x^2-6x=3x(x-2)\). \(f'\) đổi + → − tại \(x=0\) ⇒ cực đại tại \(x=0\).",review:"Ôn mục V"},
+    {q:"\(f(x)=\dfrac{x^2}{x-1}\). \(f'(x)=\)?",opts:["\(\dfrac{x(x-2)}{(x-1)^2}\)","\(\dfrac{x^2-2x}{(x-1)^2}\)","\(\dfrac{2x}{x-1}\)","\(\dfrac{-x^2}{(x-1)^2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{2x(x-1)-x^2}{(x-1)^2}=\dfrac{x^2-2x}{(x-1)^2}=\dfrac{x(x-2)}{(x-1)^2}\).",review:"Ôn mục IV"},
+    {q:"\(s(t)=t^4-4t^3\). When is velocity zero?",opts:["\(t=0,3\)","\(t=1,3\)","\(t=0,4\)","\(t=3\) only"],ans:0,topic:"RATE",exp:"\(v(t)=4t^3-12t^2=4t^2(t-3)=0\Rightarrow t=0,3\).",review:"Ôn mục III"},
+    {q:"Tangent line to \(y=\ln x\) at \(x=1\)?",opts:["\(y=x-1\)","\(y=x+1\)","\(y=1\)","\(y=\dfrac{1}{x}\)"],ans:0,topic:"TANGENT",exp:"\(f(1)=0\), \(f'(1)=1\). Tiếp tuyến: \(y-0=1(x-1)\Rightarrow y=x-1\).",review:"Ôn mục II"},
+    {q:"\(f(x)=e^{x^2}\). \(f'(x)=\)?",opts:["\(2xe^{x^2}\)","\(e^{x^2}\)","\(x^2e^{x^2}\)","\(2e^{x^2}\)"],ans:0,topic:"RULES",exp:"Chain Rule: \(e^{x^2}\cdot 2x=2xe^{x^2}\).",review:"Ôn mục IV"},
+    {q:"A business profit \(P(x)\) (in dollars) satisfies \(P'(100)=25\). Interpretation?",opts:["Total profit at 100 units is $25","Profit is increasing at about $25 per additional unit when selling 100","Average profit is $25","Profit will be $25 at 101 units"],ans:1,topic:"APPLICATION",exp:"\(P'(100)\) là tốc độ thay đổi tức thời: bán thêm 1 đơn vị (từ 100) thì lợi nhuận tăng khoảng $25.",review:"Ôn mục III & V"},
+    {q:"\(f(x)=\dfrac{\ln x}{x}\). \(f'(x)=\)?",opts:["\(\dfrac{1-\ln x}{x^2}\)","\(\dfrac{1+\ln x}{x^2}\)","\(\dfrac{\ln x-1}{x^2}\)","\(\dfrac{1}{x^2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{\frac1x\cdot x-\ln x\cdot1}{x^2}=\dfrac{1-\ln x}{x^2}\).",review:"Ôn mục IV"},
+    {q:"If \(f'(x)>0\) and \(f''(x)<0\) on an interval, the graph of \(f\) is:",opts:["Increasing and concave up","Increasing and concave down","Decreasing and concave up","Decreasing and concave down"],ans:1,topic:"GRAPH",exp:"\(f'>0\) ⇒ tăng; \(f''<0\) ⇒ lõm xuống (concave down).",review:"Ôn mục V"},
+    {q:"\(f(x)=x^3-12x\). Local minimum at:",opts:["\(x=2\)","\(x=-2\)","\(x=0\)","\(x=4\)"],ans:0,topic:"GRAPH",exp:"\(f'(x)=3x^2-12=3(x^2-4)\). \(f'\) đổi − → + tại \(x=2\) ⇒ cực tiểu tại \(x=2\).",review:"Ôn mục V"},
+    {q:"\(f(x)=x^2e^{-x}\). \(f'(x)=\)?",opts:["\(e^{-x}(2x-x^2)\)","\(e^{-x}(2x+x^2)\)","\(2xe^{-x}\)","\(x^2e^{-x}\)"],ans:0,topic:"RULES",exp:"Product Rule + Chain Rule: \(2xe^{-x}+x^2(-e^{-x})=e^{-x}(2x-x^2)\).",review:"Ôn mục IV"},
+    {q:"Average rate of change of \(f(x)=\ln x\) on \([1,e]\)?",opts:["\(\dfrac{1}{e-1}\)","\(\dfrac{e}{e-1}\)","\(e-1\)","\(1\)"],ans:0,topic:"RATE",exp:"\(\dfrac{\ln e-\ln1}{e-1}=\dfrac{1}{e-1}\).",review:"Ôn mục III"},
+    {q:"The tangent line to \(y=x^2\) at \(x=a\) passes through \((3,8)\). If \(a<3\), find \(a\).",opts:["\(x=2\)","\(x=3\)","\(x=4\)","\(x=1\)"],ans:0,topic:"TANGENT",exp:"Tiếp tuyến tại \(x=a\): \(y-a^2=2a(x-a)\). Thay \((3,8)\): \(8-a^2=2a(3-a)\Rightarrow a^2-6a+8=0\Rightarrow a=2\) hoặc \(a=4\). Vì \(a<3\) ⇒ \(a=2\).",review:"Ôn mục II"},
+    {q:"\(f'(x)=0\) at \(x=a\), \(f''(a)>0\). Then \(f\) has a:",opts:["Local maximum","Local minimum","Inflection point","Vertical tangent"],ans:1,topic:"GRAPH",exp:"\(f''>0\) ⇒ đồ thị lồi lên ⇒ \(x=a\) là cực tiểu.",review:"Ôn mục V"},
+    {q:"\(f(x)=\dfrac{x}{\sqrt{x^2+1}}\). \(f'(x)=\)?",opts:["\(\dfrac{1}{(x^2+1)^{3/2}}\)","\(\dfrac{x}{(x^2+1)^{3/2}}\)","\(\dfrac{1}{\sqrt{x^2+1}}\)","\(\dfrac{x^2}{(x^2+1)^{3/2}}\)"],ans:0,topic:"RULES",exp:"Quotient Rule + Chain: \(\dfrac{1\cdot\sqrt{x^2+1}-x\cdot\frac{x}{\sqrt{x^2+1}}}{x^2+1}=\dfrac{1}{(x^2+1)^{3/2}}\).",review:"Ôn mục IV"},
+    {q:"A population grows according to \(P(t)=100e^{0.05t}\). Instantaneous growth rate at \(t=0\)?",opts:["\(5\)","\(100\)","\(0.05\)","\(105\)"],ans:0,topic:"APPLICATION",exp:"\(P'(t)=100\cdot0.05e^{0.05t}=5e^{0.05t}\Rightarrow P'(0)=5\).",review:"Ôn mục III & V"},
+    {q:"\(f(x)=\sin x\cos x\). \(f'(x)=\)?",opts:["\(\cos 2x\)","\(-\sin 2x\)","\(\sin x-\cos x\)","\(2\sin x\cos x\)"],ans:0,topic:"RULES",exp:"Product Rule: \(\cos x\cos x+\sin x(-\sin x)=\cos^2x-\sin^2x=\cos 2x\).",review:"Ôn mục IV"},
+    {q:"The linear approximation of \(f(x)=\sqrt{x}\) near \(x=9\) gives an estimate for \(\sqrt{9.1}\). Which is closest?",opts:["\(3.016\)","\(3.1\)","\(3.001\)","\(2.9\)"],ans:0,topic:"TANGENT",exp:"Tiếp tuyến tại \(x=9\): \(f(9)=3\), \(f'(9)=\dfrac{1}{2\sqrt9}=\dfrac16\). \(f(9.1)\approx3+\dfrac16(0.1)=3+0.0167=3.0167\).",review:"Ôn mục II — Xấp xỉ tuyến tính"},
+    {q:"\(f(x)=x^4-2x^2\). Inflection points at:",opts:["\(x=\pm\dfrac{1}{\sqrt{3}}\)","\(x=\pm 1\)","\(x=0\)","\(x=\pm\sqrt{2}\)"],ans:0,topic:"GRAPH",exp:"\(f'(x)=4x^3-4x\), \(f''(x)=12x^2-4=0\Rightarrow x=\pm\dfrac{1}{\sqrt{3}}\).",review:"Ôn mục V"},
+    {q:"\(f(x)=\dfrac{\sin x}{x}\). \(f'(x)=\)?",opts:["\(\dfrac{x\cos x-\sin x}{x^2}\)","\(\dfrac{\sin x-x\cos x}{x^2}\)","\(\dfrac{\cos x}{x}\)","\(\dfrac{x\cos x+\sin x}{x^2}\)"],ans:0,topic:"RULES",exp:"Quotient Rule: \(\dfrac{\cos x\cdot x-\sin x\cdot1}{x^2}=\dfrac{x\cos x-\sin x}{x^2}\).",review:"Ôn mục IV"},
+    {q:"Revenue \(R(x)=100x-x^2\). Marginal revenue at \(x=20\)?",opts:["\(60\)","\(80\)","\(100\)","\(40\)"],ans:0,topic:"APPLICATION",exp:"\(R'(x)=100-2x\Rightarrow R'(20)=60\).",review:"Ôn mục III & V"},
+    {q:"\(f(x)=x^3-6x^2+9x\). Inflection point at \(x=\)?",opts:["\(2\)","\(0\)","\(3\)","\(1\)"],ans:0,topic:"GRAPH",exp:"\(f'(x)=3x^2-12x+9\), \(f''(x)=6x-12=0\Rightarrow x=2\).",review:"Ôn mục V"},
+    {q:"Tangent to \(y=e^x\) at \(x=0\)?",opts:["\(y=x+1\)","\(y=x-1\)","\(y=1\)","\(y=e\cdot x\)"],ans:0,topic:"TANGENT",exp:"\(f(0)=1\), \(f'(0)=1\). Tiếp tuyến: \(y-1=1(x-0)\Rightarrow y=x+1\).",review:"Ôn mục II"},
+    {q:"\(f(x)=x\ln x\) on \((0,\infty)\). Critical point at:",opts:["\(x=1/e\)","\(x=1\)","\(x=e\)","\(x=0\)"],ans:0,topic:"GRAPH",exp:"\(f'(x)=\ln x+1=0\Rightarrow\ln x=-1\Rightarrow x=1/e\).",review:"Ôn mục V"},
+    {q:"A square's side increases at \(2\) cm/s. How fast is the area increasing when side \(=5\) cm?",opts:["\(20\) cm²/s","\(10\) cm²/s","\(25\) cm²/s","\(40\) cm²/s"],ans:0,topic:"APPLICATION",exp:"\(A=s^2\), \(\dfrac{dA}{dt}=2s\cdot\dfrac{ds}{dt}=2(5)(2)=20\).",review:"Ôn mục III & V"},
+    {q:"\(f(x)=\sqrt{x^2+1}\). \(f''(x)=\)?",opts:["\(\dfrac{1}{(x^2+1)^{3/2}}\)","\(\dfrac{-1}{(x^2+1)^{3/2}}\)","\(\dfrac{x}{(x^2+1)^{3/2}}\)","\(\dfrac{1}{\sqrt{x^2+1}}\)"],ans:0,topic:"RULES",exp:"\(f'(x)=\dfrac{x}{\sqrt{x^2+1}}\); \(f''(x)=\dfrac{1}{(x^2+1)^{3/2}}\).",review:"Ôn mục IV"},
+    {q:"If \(f'(2)=0\) and \(f''(2)<0\), then at \(x=2\):",opts:["Local maximum","Local minimum","Inflection point","No extremum"],ans:0,topic:"GRAPH",exp:"\(f''<0\) ⇒ lõm xuống; kết hợp \(f'=0\) ⇒ cực đại tại \(x=2\).",review:"Ôn mục V"},
+    {q:"\(\lim_{h\to 0}\dfrac{(2+h)^3-8}{h}=\)?",opts:["\(12\)","\(8\)","\(6\)","\(0\)"],ans:0,topic:"DEFINITION",exp:"Đây là định nghĩa đạo hàm của \(f(x)=x^3\) tại \(x=2\): \(f'(x)=3x^2\Rightarrow f'(2)=12\).",review:"Ôn mục I"}
+  ]}
+};
+
+/* ============ STATE ============ */
+const TEST_DURATION = 45 * 60;
+let testState = null;
+let testTimerInterval = null;
+let currentScoreId = null;
+
+/* ============ LEADERBOARD ============ */
+function saveScoreToLocalStorage(scoreData){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_derivative_' + today;
+    let board = JSON.parse(localStorage.getItem(key) || '[]');
+    board.push(scoreData);
+    board.sort(function(a,b){ if(b.correct !== a.correct) return b.correct - a.correct; return a.timeUsed - b.timeUsed; });
+    localStorage.setItem(key, JSON.stringify(board));
+  } catch(e){ console.error('Lỗi lưu bảng xếp hạng', e); }
+}
+function getLeaderboardHTML(){
+  try {
+    const today = new Date().toLocaleDateString('vi-VN');
+    const key = 'sat_leaderboard_derivative_' + today;
+    const board = JSON.parse(localStorage.getItem(key) || '[]');
+    if(board.length === 0) return '';
+    const fmtTime = function(sec){ return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); };
+    let html = '<div class="result-section-title"><span class="icon">🏆</span> Bảng xếp hạng hôm nay ('+today+')</div><div style="overflow-x:auto;margin-bottom:22px;"><table class="topic-table"><thead><tr><th style="text-align:center">Hạng</th><th style="text-align:center">Bộ đề</th><th style="text-align:center">Kết quả</th><th style="text-align:center">Thời gian</th></tr></thead><tbody>';
+    board.slice(0,10).forEach(function(item,index){
+      const medal = index===0?'🥇':index===1?'🥈':index===2?'🥉':(index+1);
+      const isCurrent = (item.id === currentScoreId);
+      html += '<tr style="'+(isCurrent?'background:#eaf7eb;font-weight:bold;border-left:3px solid #4CAF50':'')+'"><td style="text-align:center;font-size:16px;">'+medal+'</td><td style="text-align:center">Bộ '+item.setNum+'</td><td style="text-align:center;color:'+(item.pct>=80?'#4CAF50':'#1B3A6B')+';font-weight:800;">'+item.correct+'/'+item.total+' ('+item.pct+'%)</td><td style="text-align:center">'+fmtTime(item.timeUsed)+'</td></tr>';
+    });
+    return html + '</tbody></table></div>';
+  } catch(e){ return ''; }
+}
+
+/* ============ RENDER SET SELECTOR ============ */
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(function(k){
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = function(){ startSetTest(parseInt(k)); };
+    card.innerHTML = '<div class="set-badge">SET '+k+'</div><h4>'+s.name+'</h4><p>'+s.desc+'</p><div class="set-meta"><span><strong>30</strong> câu</span><span><strong>45:00</strong> phút</span><span><strong>A–D</strong></span></div><div class="set-start">▶ Bắt đầu làm bài →</div>';
+    c.appendChild(card);
+  });
+}
+
+/* ============ START TEST ============ */
+function startSetTest(setNum){
+  testState = { setNum: setNum, current: 0, answers: new Array(30).fill(null), timeLeft: TEST_DURATION, submitted: false };
+  document.getElementById('satSetSelector').style.display = 'none';
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'block';
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(function(){
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){ clearInterval(testTimerInterval); testTimerInterval = null; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = m+':'+s;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 180) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = (function(idx){ return function(){ testState.current = idx; renderTestQuestion(); renderNavGrid(); }; })(i);
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  if(!testState) return;
+  document.querySelectorAll('#navGrid .nav-cell').forEach(function(c,i){
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(function(a){ return a !== null; }).length;
+  document.getElementById('testProgress').textContent = 'Câu '+(testState.current+1)+' / 30 · Đã trả lời '+answered+'/30';
+}
+
+function renderTestQuestion(){
+  if(!testState) return;
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach(function(o,i){
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = '<span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span>';
+    b.onclick = function(){ selectTestOption(i); };
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement){ renderMathInElement(document.getElementById('testQuestionCard'), {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(!testState || testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach(function(o,i){ o.classList.toggle('selected', i === optIdx); });
+  updateNavStatus();
+}
+
+function goToQuestion(i){ if(!testState || i<0 || i>29) return; testState.current = i; renderTestQuestion(); }
+
+/* ============ BUTTON WIRING ============ */
+document.getElementById('btnPrev').onclick = function(){ if(testState) goToQuestion(testState.current - 1); };
+document.getElementById('btnNext').onclick = function(){
+  if(!testState) return;
+  if(testState.current === 29) submitTest(false);
+  else goToQuestion(testState.current + 1);
+};
+document.getElementById('btnQuitTest').onclick = function(){
+  let ok = true;
+  try { ok = window.confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.'); } catch(e){ ok = true; }
+  if(ok === false) return;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+  testState = null;
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+};
+document.getElementById('btnSubmitTest').onclick = function(){ submitTest(false); };
+document.getElementById('btnForceResult').onclick = function(){
+  if(!testState || testState.submitted) return;
+  submitTest(true);
+};
+
+/* ============ SUBMIT TEST ============ */
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+
+  if(!auto){
+    const unanswered = testState.answers.filter(function(a){ return a === null; }).length;
+    if(unanswered > 0){
+      let ok = true;
+      try { ok = window.confirm('Bạn còn ' + unanswered + ' câu chưa trả lời. Vẫn nộp bài?'); } catch(e){ ok = true; }
+      if(ok === false) return;
+    }
+  }
+
+  testState.submitted = true;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+
+  try {
+    const questions = SAT_SETS[testState.setNum].questions;
+    let correct = 0;
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+    const timeUsed = TEST_DURATION - testState.timeLeft;
+    currentScoreId = Date.now().toString();
+    saveScoreToLocalStorage({
+      id: currentScoreId,
+      setNum: testState.setNum, correct: correct, total: questions.length,
+      pct: Math.round(correct / questions.length * 100), timeUsed: timeUsed
+    });
+  } catch(e){ console.error('Lỗi lưu điểm:', e); }
+
+  document.getElementById('satTestScreen').style.display = 'none';
+
+  try {
+    renderResult();
+  } catch(e){
+    console.error('Lỗi render kết quả:', e);
+    showBasicResult(e);
+  }
+
+  const rs = document.getElementById('satResultScreen');
+  if(rs){
+    rs.style.display = 'block';
+    if(!rs.innerHTML || rs.innerHTML.trim() === ''){
+      showBasicResult(new Error('Empty content'));
+    }
+  }
+
+  try { window.scrollTo({top:0,behavior:'smooth'}); } catch(e){ window.scrollTo(0,0); }
+  try { playFanfare(); } catch(e){}
+}
+
+function showBasicResult(err){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  const questions = (testState && SAT_SETS[testState.setNum]) ? SAT_SETS[testState.setNum].questions : [];
+  let correct = 0;
+  if(testState && questions.length){
+    testState.answers.forEach(function(ans,i){ if(ans === questions[i].ans) correct++; });
+  }
+  const total = questions.length || 30;
+  const pct = Math.round(correct / total * 100);
+  c.innerHTML =
+    '<div class="card" style="border-left:6px solid #4CAF50">' +
+    '<h3>✅ Đã hoàn thành bài thi</h3>' +
+    '<div style="display:flex;gap:24px;align-items:center;margin:20px 0;flex-wrap:wrap">' +
+    '<div style="background:#EAF0F9;padding:20px 32px;border-radius:12px;text-align:center">' +
+    '<div style="font-size:42px;font-weight:800;color:#1B3A6B">' + correct + '</div>' +
+    '<div style="font-size:14px;color:#5b6778">/ ' + total + ' câu đúng</div>' +
+    '</div>' +
+    '<div style="background:linear-gradient(135deg,#1B3A6B,#2C5AA0);padding:20px 32px;border-radius:12px;text-align:center;color:#fff">' +
+    '<div style="font-size:42px;font-weight:800;color:#F5B400">' + pct + '%</div>' +
+    '<div style="font-size:14px;opacity:.9">chính xác</div>' +
+    '</div>' +
+    '</div>' +
+    '<p style="color:#E53935;font-size:13px;margin-top:10px">⚠ Chi tiết phân tích không hiển thị: ' + (err && err.message ? err.message : 'Lỗi không xác định') + '</p>' +
+    '<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">' +
+    '<button class="btn btn-primary" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập</button>' +
+    '</div></div>';
+  c.style.display = 'block';
+}
+
+/* ============ RENDER RESULT CHI TIẾT ============ */
+function renderResult(){
+  const c = document.getElementById('satResultScreen');
+  if(!c) return;
+  c.style.display = 'block';
+
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  const autoSubmitted = testState.timeLeft <= 0;
+
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(function(k){ topicStat[k] = { correct: 0, total: 0 }; });
+  const wrongList = [];
+
+  questions.forEach(function(item,i){
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){ unanswered++; wrongList.push({ idx: i, item: item, yourAns: null }); }
+    else if(ans === item.ans){ correct++; topicStat[item.topic].correct++; }
+    else { wrong++; wrongList.push({ idx: i, item: item, yourAns: ans }); }
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct / total * 100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = Math.floor(avgTime/60) + ':' + String(avgTime%60).padStart(2,'0');
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){ level="XUẤT SẮC"; levelColor="#4CAF50"; levelIcon="🏆"; levelDesc="Hiểu rất sâu về đạo hàm và tốc độ thay đổi!"; levelAdvice="Luyện thêm bài toán tối ưu và đọc đồ thị f' phức tạp."; }
+  else if(pct >= 75){ level="TỐT"; levelColor="#2C5AA0"; levelIcon="⭐"; levelDesc="Nắm tốt công thức và ý nghĩa đạo hàm."; levelAdvice="Tập trung vào Chain Rule và bài toán thực tế để đạt 700+."; }
+  else if(pct >= 60){ level="KHÁ"; levelColor="#E8A317"; levelIcon="📈"; levelDesc="Có nền tảng nhưng còn nhầm lẫn ở Quotient/Chain Rule hoặc đọc đồ thị."; levelAdvice="Ôn lại mục IV và V, làm lại các câu sai."; }
+  else if(pct >= 40){ level="TRUNG BÌNH"; levelColor="#FF9800"; levelIcon="📚"; levelDesc="Cần củng cố định nghĩa và các quy tắc cơ bản."; levelAdvice="Đọc kỹ mục I–IV và làm lại Nhóm 1."; }
+  else { level="CẦN CỐ GẮNG"; levelColor="#E53935"; levelIcon="🔧"; levelDesc="Cần xây dựng lại nền tảng đạo hàm."; levelAdvice="Bắt đầu từ định nghĩa đạo hàm, Power Rule, sau đó mới sang Product/Quotient/Chain."; }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){ timeEval="Quản lý thời gian xuất sắc"; timeIcon="🚀"; timeColor="#4CAF50"; }
+  else if(timeUsed <= TEST_DURATION*0.9){ timeEval="Quản lý thời gian tốt"; timeIcon="⏱️"; timeColor="#2C5AA0"; }
+  else if(timeUsed < TEST_DURATION){ timeEval="Sát giờ — cần tăng tốc"; timeIcon="⏰"; timeColor="#E8A317"; }
+  else { timeEval="Hết giờ"; timeIcon="🚨"; timeColor="#E53935"; }
+
+  const topicList = Object.keys(topicStat)
+    .filter(function(k){ return topicStat[k].total > 0; })
+    .map(function(k){ return { key: k, name: TOPICS[k], correct: topicStat[k].correct, total: topicStat[k].total, pct: Math.round(topicStat[k].correct/topicStat[k].total*100) }; })
+    .sort(function(a,b){ return a.pct - b.pct; });
+
+  const weakTopics = topicList.filter(function(t){ return t.pct < 60; });
+  const mediumTopics = topicList.filter(function(t){ return t.pct >= 60 && t.pct < 80; });
+  const strongTopics = topicList.filter(function(t){ return t.pct >= 80; });
+
+  let roadmapHTML = '';
+  if(weakTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-1"><div class="phase-num">1</div><div class="phase-content"><h4>Giai đoạn 1: Củng cố kiến thức nền tảng <span class="phase-time">⏳ 1–3 ngày</span></h4><ul>';
+    weakTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — ' + TOPIC_RECOMMENDATIONS[t.key] + '</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm cơ bản</button></div></div></div>';
+  }
+  if(mediumTopics.length > 0){
+    roadmapHTML += '<div class="roadmap-phase phase-2"><div class="phase-num">2</div><div class="phase-content"><h4>Giai đoạn 2: Luyện tập nâng cao <span class="phase-time">⏳ 3–5 ngày</span></h4><ul>';
+    mediumTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Cần thêm bài tập vận dụng.</li>'; });
+    roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm trung bình</button><button class="btn btn-primary btn-sm" onclick="restartSameSet()">🔄 Làm lại bộ đề này</button></div></div></div>';
+  }
+  roadmapHTML += '<div class="roadmap-phase phase-3"><div class="phase-num">3</div><div class="phase-content"><h4>Giai đoạn 3: ' + (strongTopics.length > 0 ? 'Duy trì &amp; mở rộng' : 'Luyện đề tổng hợp') + ' <span class="phase-time">⏳ Liên tục</span></h4><ul>';
+  if(strongTopics.length > 0){
+    strongTopics.forEach(function(t){ roadmapHTML += '<li><strong>' + t.name + '</strong> (' + t.correct + '/' + t.total + ' = ' + t.pct + '%) — Duy trì phong độ.</li>'; });
+  } else {
+    roadmapHTML += '<li>Luyện các bộ đề khác để đa dạng dạng bài.</li>';
+  }
+  roadmapHTML += '</ul><div class="phase-actions"><button class="btn btn-outline btn-sm" onclick="backToSetSelector()">📚 Chọn bộ khác</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'sat\')">⏱️ Luyện đề khác</button></div></div></div>';
+
+  let topicTableHTML = '';
+  topicList.forEach(function(t){
+    let cls = '', status = '', statusColor = '';
+    if(t.pct >= 80){ status = '✅ Vững'; statusColor = '#4CAF50'; }
+    else if(t.pct >= 60){ cls = 'warn'; status = '⚠ Cần luyện'; statusColor = '#E8A317'; }
+    else { cls = 'bad'; status = '🔴 Yếu'; statusColor = '#E53935'; }
+    topicTableHTML += '<tr><td><strong>' + t.name + '</strong></td><td><div class="topic-bar-cell"><div class="topic-bar"><div class="topic-bar-fill ' + cls + '" style="width:' + t.pct + '%"></div></div><span style="min-width:44px;font-weight:700;color:#5b6778">' + t.pct + '%</span></div></td><td style="text-align:right"><span class="topic-score">' + t.correct + '/' + t.total + '</span></td><td style="text-align:center"><strong style="color:' + statusColor + ';font-size:13px">' + status + '</strong></td></tr>';
+    topicTableHTML += '<tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8"><div class="topic-recommend">📌 <strong>Gợi ý:</strong> ' + TOPIC_RECOMMENDATIONS[t.key] + '</div></td></tr>';
+  });
+
+  let wrongHTML = '';
+  if(wrongList.length > 0){
+    wrongHTML += '<div class="result-section-title"><span class="icon" style="background:#fdeaea;color:#E53935">🔍</span> Phân tích ' + wrongList.length + ' câu sai / bỏ trống</div>';
+    wrongList.forEach(function(w){
+      const item = w.item;
+      const cls = w.yourAns === null ? 'unanswered' : '';
+      const yourText = w.yourAns === null ? '— Không trả lời —' : item.opts[w.yourAns];
+      wrongHTML += '<div class="wrong-item ' + cls + '">' +
+        '<div class="wrong-head"><div class="wrong-num">' + (w.idx+1) + '</div><div class="wrong-q">' + item.q + '<div><span class="topic-tag">' + TOPICS[item.topic] + '</span></div></div></div>' +
+        '<div class="ans-row">' +
+        '<div class="ans-box your"><div class="lbl">Bạn chọn</div><div class="val">' + (w.yourAns === null ? '—' : letterMap[w.yourAns] + '. ') + yourText + '</div></div>' +
+        '<div class="ans-box correct"><div class="lbl">Đáp án đúng</div><div class="val">' + letterMap[item.ans] + '. ' + item.opts[item.ans] + '</div></div>' +
+        '</div>' +
+        '<div class="exp-box"><div class="lbl">🧮 Lời giải</div>' + item.exp + '</div>' +
+        '<div class="review-box">📖 ' + item.review + '</div>' +
+        '</div>';
+    });
+  } else {
+    wrongHTML = '<div class="roadmap" style="border-left-color:#4CAF50"><h3>🎯 Tất cả câu trả lời đều chính xác!</h3><p style="font-size:14px;color:#5b6778">Không có câu nào sai. Em đã sẵn sàng cho các bộ đề khó hơn!</p></div>';
+  }
+
+  c.innerHTML =
+    '<div class="result-hero">' +
+    '<div>' +
+    '<h2>🎉 Hoàn thành ' + SAT_SETS[setNum].name + '!</h2>' +
+    '<p>Bạn đã làm ' + total + ' câu trong ' + tm + ':' + ts + '. ' + (autoSubmitted ? '⏰ Hết giờ! ' : '') + (unanswered > 0 ? 'Còn ' + unanswered + ' câu chưa trả lời.' : '') + '</p>' +
+    '</div>' +
+    '<div class="result-score"><div class="num">' + correct + '</div><div class="den">/ ' + total + ' câu đúng</div><div class="pct">' + pct + '%</div></div>' +
+    '</div>' +
+
+    '<div class="level-banner" style="border-left-color:' + levelColor + '">' +
+    '<div class="level-icon" style="background:' + levelColor + '">' + levelIcon + '</div>' +
+    '<div class="level-content"><h3 style="color:' + levelColor + '">Đánh giá: ' + level + '</h3><p>' + levelDesc + '</p><div class="level-advice"><strong>💡 Định hướng:</strong> ' + levelAdvice + '</div></div>' +
+    '</div>' +
+
+    '<div class="result-stats">' +
+    '<div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">' + correct + '</div><div class="sub">Chiếm ' + pct + '%</div></div>' +
+    '<div class="stat-box red"><div class="label">❌ Sai</div><div class="value">' + wrong + '</div><div class="sub">Cần xem lại</div></div>' +
+    '<div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">' + unanswered + '</div><div class="sub">Chưa trả lời</div></div>' +
+    '<div class="stat-box"><div class="label">🎯 SAT ước lượng</div><div class="value">' + estimatedSAT + '</div><div class="sub">/ 800</div></div>' +
+    '</div>' +
+
+    getLeaderboardHTML() +
+
+    '<div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div>' +
+    '<div class="time-analysis">' +
+    '<div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content"><div class="tb-label">Tổng thời gian</div><div class="tb-value">' + tm + ':' + ts + '</div><div class="tb-desc">/ 45:00</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content"><div class="tb-label">Trung bình / câu</div><div class="tb-value">' + avgTimeStr + '</div><div class="tb-desc">Mục tiêu: ≤ 1:30</div></div></div>' +
+    '<div class="time-block"><div class="tb-icon" style="background:' + timeColor + '22;color:' + timeColor + '">' + timeIcon + '</div><div class="tb-content"><div class="tb-label">Đánh giá</div><div class="tb-value" style="color:' + timeColor + ';font-size:15px">' + timeEval + '</div><div class="tb-desc">' + (timeUsed < TEST_DURATION ? 'Còn dư ' + Math.floor((TEST_DURATION-timeUsed)/60) + ':' + String((TEST_DURATION-timeUsed)%60).padStart(2,'0') : 'Đã dùng hết') + '</div></div></div>' +
+    '</div>' +
+
+    '<div class="result-section-title"><span class="icon">📊</span> Phân tích theo chủ đề</div>' +
+    '<table class="topic-table"><thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead><tbody>' + topicTableHTML + '</tbody></table>' +
+
+    '<div class="roadmap"><h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3><p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng:</p>' + roadmapHTML + '</div>' +
+
+    wrongHTML +
+
+    '<div class="result-actions">' +
+    '<button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại ' + SAT_SETS[setNum].name + '</button>' +
+    '<button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lý thuyết</button>' +
+    '<button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập thêm</button>' +
+    '</div>';
+
+  if(window.renderMathInElement){ renderMathInElement(c, {delimiters:[{left:'\\(',right:'\\)',display:false}]}); }
+}
+
+function restartSameSet(){
+  if(!testState) return;
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'none';
+  document.getElementById('satSetSelector').style.display = 'grid';
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ INIT ============ */
+renderSatSetSelector();
+
+window.addEventListener('load', function(){
+  if(window.renderMathInElement){
+    renderMathInElement(document.body, {delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+  }
+});
+
+console.log('[SAT Derivative Web] ✅ Loaded. 3 sets × 30 questions = 90 questions total.');
+</script>
+</body>
+</html>
